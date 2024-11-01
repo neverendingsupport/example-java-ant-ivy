@@ -1,0 +1,33 @@
+<project name="my-spring4-app" default="run" basedir="." xmlns:ivy="antlib:org.apache.ivy.ant">
+  <property name="src.dir" value="src/main/java"/>
+  <property name="build.dir" value="build"/>
+  <property name="lib.dir" value="lib"/>
+
+  <taskdef name="ivy" classname="org.apache.ivy.ant.IvyTask"/>
+
+  <target name="init">
+    <mkdir dir="${build.dir}"/>
+  </target>
+
+  <target name="resolve" depends="init">
+    <ivy:resolve/>
+    <ivy:retrieve pattern="${lib.dir}/[artifact]-[revision]-[type].[ext]"/>
+  </target>
+
+  <target name="compile" depends="resolve">
+    <javac srcdir="${src.dir}" destdir="${build.dir}" includeantruntime="false">
+      <classpath>
+        <fileset dir="${lib.dir}" includes="*.jar"/>
+      </classpath>
+    </javac>
+  </target>
+
+  <target name="run" depends="compile">
+    <java classname="com.example.Application" fork="true">
+      <classpath>
+        <pathelement path="${build.dir}"/>
+        <fileset dir="${lib.dir}" includes="*.jar"/>
+      </classpath>
+    </java>
+  </target>
+</project>

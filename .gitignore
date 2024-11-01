@@ -1,0 +1,8 @@
+*.iml
+.idea
+
+.env
+.envrc
+
+build
+lib
