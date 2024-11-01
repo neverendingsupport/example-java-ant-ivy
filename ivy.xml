@@ -2,10 +2,10 @@
   <info organisation="com.example" module="my-spring4-app" />
 
   <dependencies>
-    <dependency org="org.springframework" name="spring-core" rev="4.3.30.RELEASE" />
-    <dependency org="org.springframework" name="spring-webmvc" rev="4.3.30.RELEASE" />
-    <dependency org="org.springframework.security" name="spring-security-core" rev="4.2.20.RELEASE" />
-    <dependency org="org.springframework.security" name="spring-security-web" rev="4.2.20.RELEASE" />
+    <dependency org="com.herodevs.nes.springframework" name="spring-core" rev="4.3.30-spring-framework-4.3.41" />
+    <dependency org="com.herodevs.nes.springframework" name="spring-webmvc" rev="4.3.30-spring-framework-4.3.41" />
+    <dependency org="com.herodevs.nes.springframework.security" name="spring-security-core" rev="4.2.20-spring-security-4.2.21" />
+    <dependency org="com.herodevs.nes.springframework.security" name="spring-security-web" rev="4.2.20-spring-security-4.2.21" />
     <dependency org="javax.servlet" name="javax.servlet-api" rev="3.1.0" />
   </dependencies>
 </ivy-module>
